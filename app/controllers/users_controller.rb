@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
 
   def show
-    @name = current_user.name
-    @prototype = current_user.prototypes
+    @user = User.name  
+    #user = User.find(params[:id]) #karentouser 4 5
+    @users=User.all
+    #@prototype =user.id
     @user=User.find(params[:id])
-    @Prototype=Prototype.all
+    @prototype=Prototype.all
   end
 
 end

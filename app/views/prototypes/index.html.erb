@@ -5,8 +5,7 @@
       <div class="greeting">
       <span>
       <%="こんにちは、"%>
-      <%= current_user.name %>
-         <%= link_to  "さん", user_path(current_user.id), class: :greeting__link%>
+         <%= link_to  "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link%>
       </span>
       </div> 
       <% end %>

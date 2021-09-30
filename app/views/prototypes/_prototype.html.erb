@@ -5,7 +5,9 @@
     <p class="card__summary">
       <%=prototype.catch_copy  %>
     </p>
-    <%= link_to  prototype.user.name,user_path(current_user.id) , class: :card__user %>
+    <% if user_signed_in? && current_user.id == prototype.user_id %>
+    <%= link_to prototype.user.name,user_path(current_user.id) , class: :card__user %>
        <%= prototype.user.name %>
+     <% end %>
   </div>
 </div>
