@@ -1,14 +1,13 @@
 class CommentsController < ApplicationController
 
   def create
-    #comment = Comment.new
-    comment=Comment.create(comment_params)
-    if comment.save
-      #redirect_to    #"/prototypes/#{comment.prototype.id}"
-      redirect_to prototype_path (comment.prototype_id)
-      #(@comment.user_id,@comment.prototype_id)    
+    @comment=Comment.new(comment_params)
+    if @comment.save
+      redirect_to prototype_path (comment.prototype_id)  
      else
-       render :show  #render "ディレクトリ名/ファイル名"
+      @prototype = @comment.prototype
+      @comments = @prototype.comments
+     render "prototypes/show"
   end
 end
 

@@ -6,7 +6,8 @@ class UsersController < ApplicationController
     @users=User.all
     #@prototype =user.id
     @user=User.find(params[:id])
-    @prototype=Prototype.all
+    #@prototype
+    @prototype =Prototype.all
   end
 
 end
